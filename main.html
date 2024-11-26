@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Air Pollution</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <h1>Weather & Air Pollution App</h1>
+    <form id="weather-form">
+        <label for="city">Enter city name:</label>
+        <input type="text" id="city" name="city" placeholder="e.g., London" required>
+        <button type="submit">Get Weather & Air Quality</button>
+    </form>
+    <div id="weather-result"></div>
+    <div id="air-pollution-result"></div>
+    <div>
+        <canvas id="myChart"></canvas>
+      </div>
+    
+
+      <script src="js/dailyCondition.js"></script>
+
+</body>
+
+</html>
