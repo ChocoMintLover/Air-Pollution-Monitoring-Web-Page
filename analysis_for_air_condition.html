@@ -11,8 +11,6 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Plugins for Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
     <!-- Tensorflow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 
@@ -33,11 +31,10 @@
                 </li>
 
                 <li>
-                    <a href="javascript:void(0);" class="search">
+                    <a href="#" class="search">
                         <img src="./images/search-icon.jpg">
                     </a>
                 </li>
-
 
             </ul>
 
@@ -54,31 +51,15 @@
             </a>
             <label for="city" class="search-text" style="display:block;">Enter city name:</label>
             <input type="text" id="city" name="city" placeholder="e.g. Busan" class="search-input" required>
-            <button type="submit" class="search-text">Get Weather & Air Quality</button>
+            <button type="submit" class="search-text">Predict Tomorrow's Air Condition</button>
         </form>
 
     </div>
-    <div id="response"></div>
-
-
-
-    <!-- Weather and Pollution info for today -->
-    <div id="weather-result"></div>
-
-    <div id="aircondition-container" class="data-box-container"></div>
-
-
-    
-    <!-- Doughnut Chart for today's pollution info -->
 
     <div id="chart-graph">
-
     
-        <!-- Bar Charts for 30-days with each pollution information -->
         <div id="charts-container">
-            <div>
-                <canvas id="doughnutChart"></canvas>
-            </div>
+
             <div id="coChartContainer"><canvas id="coChart"></canvas></div>
             <div id="nh3ChartContainer"><canvas id="nh3Chart"></canvas></div>
             <div id="noChartContainer"><canvas id="noChart"></canvas></div>
@@ -91,8 +72,9 @@
 
     </div>
 
+
     <!-- Loading Weather data from openweather api -->
-    <script src="js/dailyCondition.js"></script>
+    <script src="js/air_condition_prediction.js"></script>
     <!-- enable/disable search bar -->
     <script src="js/search.js"></script>
 

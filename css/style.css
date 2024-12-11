@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0px;
     padding: 0px;
     font-family: poppins;
     background-color: #ffffff;
+    align-items: center;
 }
 
 * {
@@ -21,22 +24,15 @@ a {
 
 nav {
     width: 100%;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.05);
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
 
-.navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 45px;
-}
-
-.menu {
+.menu{
     display: flex;
 }
 
-.menu li {
+.menu li{
     position: relative;
     margin: 20px;
     display: flex;
@@ -48,38 +44,29 @@ nav {
     color: #555555;
 }
 
-
-.menu a:hover,
-.right-menu a:hover,
-.search-cancel:hover,
-.form-cancel:hover {
-    color: #0b9d8a;
-    transition: all ease 0.3s;
+.navigation .menu .search img {
+    width: 20px; 
+    height: 20px; 
+    object-fit: contain; 
+    vertical-align: middle; 
 }
 
-
-.fa-shopping-cart {
-    position: relative;
+button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: #bbb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.num-cart-product {
-    position: absolute;
-    top: -17px;
-    right: -17px;
-    width: 25px;
-    height: 25px;
-    font-size: 0.8rem;
-    border-radius: 50%;
-    background-color: #0b9d8a;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
+button[type="submit"]:hover {
+    background-color: #999;
 }
 
-.search-bar {
-    width: 100%;
+.search-bar{
+    width:100%;
     height: 300px;
     background-color: #ffffff;
     position: fixed;
@@ -87,13 +74,13 @@ nav {
     bottom: 0px;
     display: flex;
     justify-content: center;
-    box-shadow:  2px -5px 30px rgba(0,0,0,0.1);
+    box-shadow: 2px -5px 30px rgba(0,0,0,0.1);
     z-index: 101;
     animation: search 0.3s;
 }
 
-.search-input {
-    width: 90%;
+.search-input{
+    width:90%;
     border-bottom: 2px solid #555555;
     display: flex;
     justify-content: center;
@@ -102,8 +89,8 @@ nav {
     margin-top: 20px;
 }
 
-.search-bar input {
-    width: 100%;
+.search-bar input{
+    width:100%;
     padding: 30px;
     border: none;
     outline: none;
@@ -112,217 +99,181 @@ nav {
     padding: 0px 20px;
 }
 
-.search-cancel {
+.search-cancel{
     color: #272727;
     font-size: 2rem;
     padding-right: 40px;
 }
 
-.search-bar {
+.search-bar{
     display: none;
 }
 
-.search-bar-active {
+.search-bar {
+    padding-top: 15px;
+}
+
+.search-bar-active{
     display: flex;
 }
 
-@keyframes search {
-    0% {
+@keyframes search{
+    0%{
         bottom: -300px;
     }
-    100% {
+    100%{
         bottom: 0px;
     }
 }
 
-.form {
+.weather-form {
+    display: flex;
+}
+
+.pollution-table {
     width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    background-color: rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 101;
-}
-
-.login-form,
-.sign-up-form {
-    width: 420px;
-    padding: 20px 10px;
-    background-color: #ffffff;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-radius: 5px;
-    position: relative;
-}
-
-.login-form form,
-.sign-up-form form{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-}
-
-.login-form strong,
-.sign-up-form strong {
-    color: #272727;
-    font-size: 2rem;
-    margin: 2px 7px 7px 7px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 500;
-}
-
-.login-form input,
-.sign-up-form input {
-    width: 90%;
-    height: 45px;
-    margin: 6px 0px;
-    padding: 0px 10px;
-    border: 1px solid rgba(0,0,0,0.1);
-    outline: none;
-    border-radius: 7px;
-}
-
-.login-form input::placeholder,
-.sign-up-form input::placeholder {
-    color: rgba(0,0,0,0.5);
-}
-
-.login-form input[type="submit"],
-.sign-up-form input[type="submit"] {
-    background-color: #0b9d8a;
-    color: #ffffff;
-    border: none;
-    outline: none;
-    text-transform: uppercase;
-    margin-top: 0px;
-    border-radius: 3px;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
-}
-
-.form-btns {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-collapse: collapse;
     margin-top: 10px;
 }
 
-.form-btns a{
-    color: #4d4d4d;
-    font-size: 0.9rem;
+.pollution-table th,
+.pollution-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
 }
 
-.sign-up-btn {
-    border-bottom: 1px solid #868686;
-    line-height: 16px;
-
+.pollution-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
 }
 
-.form-cancel {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    color: #868686;
-
-}
-
-.login-form,
-.sign-up-form,
-.form {
-    display: none;
-}
-
-.login-active,
-.login-active .login-form {
+.data-box-container {
     display: flex;
-    animation: fade 0.3s;
-}
-
-.sign-up-active,
-.sign-up-active .sign-up-form {
-    display: flex;
-    animation: fade 0.3s;
-}
-
-@keyframes fade {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-
-.city-section {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.city-section h4 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.data-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.data-row span {
-    padding: 8px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    background-color: #eef;
-}
-
-span:has(.✅) {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-span:has(.⚠️) {
-    background-color: #fff3cd;
-    color: #856404;
-}
-
-span:has(.❌), span:has(.❗) {
-    background-color: #f8d7da;
-    color: #721c24;
-}
-
-.city-section {
-    margin: 20px 0;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    cursor: pointer; /* Add pointer cursor for click */
-}
-
-.city-section:hover {
-    background-color: #e6e6e6; /* Highlight on hover */
-}
-
-#city-detail {
+    flex-direction: column;
+    flex-wrap: wrap; /* 여러 줄로 나열되도록 설정 */
+    gap: 10px; /* 박스 간 간격 */
     margin-top: 20px;
+}
+
+.data-box {
+    flex: 1 1 calc(25% - 10px); /* 박스 크기를 조정 (25% 너비, gap 고려) */
+    min-width: 150px; /* 최소 너비 */
     padding: 15px;
+    background-color: #f5f5f5; /* 박스 배경색 */
+    border: 1px solid #ddd; /* 박스 테두리 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+    text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.data-box h4 {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.data-box p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #fff;
+    background-color: #f9f9f9;
+}
+
+.data-box {
+    margin: 10px 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap; /* 필요 시 다음 줄로 넘기기 */
+    gap: 20px; /* 박스 간 간격 */
+    margin-bottom: 20px;
+}
+
+.data-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 150px; /* 박스 너비 설정 */
+    text-align: center;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+#aircondition-container {
+    display: flex;
+    align-items: center;
+}
+
+#chart-graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#charts-container {
+    display: flex;
+    flex-wrap: wrap;    /* 차트들이 화면에 맞게 줄 바꿈이 되도록 설정 */
+    justify-content: space-around; /* 차트 카드들 사이에 공간을 고르게 배분 */
+    gap: 20px; /* 차트 간의 간격 설정 */
+    margin-top: 20px; /* 상단 마진 추가 */
+}
+
+/* 각 차트 카드의 크기 조정 */
+#coChartContainer, #nh3ChartContainer, #noChartContainer, #no2ChartContainer, #o3ChartContainer, 
+#pm2_5ChartContainer, #pm10ChartContainer, #so2ChartContainer {
+    flex: 1 1 1000px; /* 각 차트 카드가 최소 300px의 크기를 가질 수 있도록 설정 */
+    max-width: 1200px; /* 최대 너비 제한 */
+    height: 500px; /* 차트 카드 높이 설정 */
+    box-sizing: border-box; 
+}
+
+#doughnutChart {
+    max-width: 700px; /* 최대 너비 제한 */
+    height: 700px; /* 차트 카드 높이 설정 */
+    box-sizing: border-box; 
+}
+
+#coChart, #nh3Chart, #noChart, #no2Chart, #o3Chart, #pm2_5Chart, #pm10Chart, #so2Chart {
+    width: 100%;
+    height: 100%;
+}
+
+#response {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 300;
+    max-width: 1000px;
+    text-align: center;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+    margin: 10px;
+    padding: 5px;
+    width: 90%;
+    word-wrap: break-word;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
 }

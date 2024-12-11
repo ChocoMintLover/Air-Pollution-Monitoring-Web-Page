@@ -1,0 +1,25 @@
+moment chart papaparse openweather api
+
+
+Did u choose this api?
+
+open api key: 64edd4b9daa8d34e8f34965fed3faf75
+
+http://api.openweathermap.org/data/2.5/air_pollution?lat={0}&lon={0}&appid={64edd4b9daa8d34e8f34965fed3faf75}
+
+
+
+22: open_api를 통한 검색 및 데이터 가져오기 v
+23: chart.js로 시각화하기 v
+24: vacant 
+25: ai모델 학습하기 v
+
+29 : 기본 레이아웃 완성 및 디자인 수정 v
+=> 약간 미완. 각각의 오염 수치나 온도 등에 대하여 색상의 alpha로 시각화하고, 풍향, 날씨 등은 아이콘으로 나중에 추가하기.
+1: 그래프 디자인 정렬하고, 폰트, 풍향 날씨 아이콘 넣기. Search bar 현대적으로 변경하기. v
+
+2: 그래프 위치 미세 조정 및 챗봇 삽입 시도. gpt2 파인튜닝이 좋을듯 싶음. Search bar 검색시 바로 꺼지도록 하기 weather to icon 넣기 air pollution over 30days 겹쳐서 div 만드는거 수정
+=> 다행히 만들어진 모델이 있어서 모델 확정, 프롬프트 및 api 통신 설계 완료
+
+3: AI 모델 삽입 페이지 만들고 넣기 및 AI 모델 넣기 env파일 만들어서 깃허브에 따로 저장 안 되게 하기 모델 응답 정리해서 잘 보이게 칸으로 정리하기.
+4: 디자인 최종 완성
