@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQI Prediction</title>
+</head>
+<body>
+    <h1>30-Day AQI Prediction</h1>
+
+    <label for="uploadModel">Upload Model (.h5):</label>
+    <input type="file" id="uploadModel" accept=".h5">
+    <br><br>
+
+    <label for="dataInput">Enter 30 days of data (comma-separated, one row per line):</label>
+    <textarea id="dataInput" rows="10" cols="50" placeholder="e.g.\n0.5, 1.2, 0.8, 0.9\n..."></textarea>
+    <br><br>
+
+    <button id="predictButton" disabled>Predict AQI</button>
+    <p id="output"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script>
+        let model;
+
+        document.getElementById("uploadModel").addEventListener("change", async function (event) {
+            const file = event.target.files[0];
+            if (!file) {
+                alert("Please select a .h5 file!");
+                return;
+            }
+
+            try {
+                model = await tf.loadLayersModel(tf.io.browserFiles([file]));
+                alert("Model loaded successfully!");
+                document.getElementById("predictButton").disabled = false;
+            } catch (error) {
+                alert("Failed to load model: " + error.message);
+            }
+        });
+
+        document.getElementById("predictButton").addEventListener("click", function () {
+            if (!model) {
+                alert("Please load a model first!");
+                return;
+            }
+
+            // Get user input data
+            const rawData = document.getElementById("dataInput").value.trim();
+            const dataRows = rawData.split("\n").map(row => row.split(",").map(Number));
+
+            // Validate input shape
+            if (dataRows.length !== 30 || dataRows.some(row => row.length !== 4)) {
+                alert("Please provide 30 rows of data with 4 values in each row.");
+                return;
+            }
+
+            // Convert to Tensor
+            const inputTensor = tf.tensor2d(dataRows, [30, 4]).reshape([1, 30, 4]); // Add batch dimension
+
+            // Make prediction
+            const prediction = model.predict(inputTensor);
+            prediction.array().then(result => {
+                document.getElementById("output").innerText = "Predicted AQI: " + result[0];
+            }).catch(error => {
+                alert("Prediction failed: " + error.message);
+            });
+        });
+    </script>
+</body>
+</html>
