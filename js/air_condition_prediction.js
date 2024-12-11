@@ -4,7 +4,7 @@
 $(document).ready(function () {
 
     // Settings for openweather api
-    const apiKey = "64edd4b9daa8d34e8f34965fed3faf75";
+    const apiKey = "ADD_OPENWEATHERAPI_KEY";
     const airPollutionHistoryApiUrl = "https://api.openweathermap.org/data/2.5/air_pollution/history";
     const charts = {};
 
