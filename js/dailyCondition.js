@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
     // Settings for openweather api
-    const apiKey = "64edd4b9daa8d34e8f34965fed3faf75";
+    const apiKey = "ADD_OPENWEATHERAPI_KEY";
     const airPollutionHistoryApiUrl = "https://api.openweathermap.org/data/2.5/air_pollution/history";
     const currentAirPollutionApiUrl = "https://api.openweathermap.org/data/2.5/air_pollution";
 
     // Settings for Huggingface
 
-    const huggingface_apiKey = "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"; // Hugging Face API 키를 여기에 입력하세요.
+    const huggingface_apiKey = "ADD_HUGGINGFACE_TOKEN_KEY"; 
     const model_api_url = "https://api-inference.huggingface.co/models/Qwen/Qwen2.5-Coder-32B-Instruct";
 
 
